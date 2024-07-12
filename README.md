@@ -7,4 +7,5 @@ This project includes several steps:
 
 ### Prerequisites
 > Install Terraform
+
 > Install aws-cli
