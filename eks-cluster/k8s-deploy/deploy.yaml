@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calc-app
+  labels:
+    env: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      env: prod
+  template:
+    metadata:
+      name: calc-app
+      labels:
+        env: prod
+    spec:
+      containers:
+        - name: calc
+          image: ari786/calculator:latest
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+          ports:
+            - containerPort: 80
+
+    
